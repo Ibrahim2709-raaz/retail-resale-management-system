@@ -313,69 +313,65 @@ The following questions shall be answered before SRS baselining.
 
 ## VAL-001 — Employee Financial Visibility
 
-Should normal employees be allowed to see:
+Employees may access:
 
-* Product purchase cost?
-* Product profit?
-* Overall business revenue?
-* Customer outstanding balances?
+- Product purchase cost.
+- Product profit.
+- Overall business revenue.
+- Customer outstanding balances.
 
-**Stakeholder Decision:** Pending
+**Stakeholder Decision:** Approved
 
 ---
 
 ## VAL-002 — Sale Below Cost
 
-The current business rule states that below-cost sales are not normally permitted and the system must display a warning.
+The system shall warn the user when a sale is below final product cost.
 
-Determine whether the warning:
+The warning shall not completely prevent the transaction.
 
-**Option A:** Warns the user but allows an administrator to continue.
+An authorized user may continue after acknowledging the warning.
 
-**Option B:** Completely blocks the transaction.
-
-**Stakeholder Decision:** Pending
+**Stakeholder Decision:** Warning with override permitted
 
 ---
 
 ## VAL-003 — Return Refund Handling
 
-When a customer returns a product after already paying for it, determine how the value should normally be handled.
+When a paid product is returned and a refund is approved, the refund may be issued through:
 
-Possible outcomes include:
+- Cash.
+- Online transfer.
 
-* Cash repayment.
-* Bank/JazzCash repayment.
-* Customer credit balance.
-* Exchange only.
+The refund transaction shall be recorded by the system.
 
-**Stakeholder Decision:** Pending
+**Stakeholder Decision:** Cash or online transfer
 
 ---
 
 ## VAL-004 — Money Owed to Customer After Exchange
 
-When a cheaper replacement creates money owed back to the customer, determine whether the system should:
+When a cheaper replacement creates an amount owed to the customer, the business may:
 
-* Record an immediate refund.
-* Maintain an amount owed to the customer.
-* Allow either option.
+- Refund the amount immediately, or
+- Retain the amount as customer credit.
 
-**Stakeholder Decision:** Pending
+The system shall support both approaches.
+
+**Stakeholder Decision:** Both options supported
 
 ---
 
 ## VAL-005 — Expense Allocation
 
-Determine whether petrol and rider costs should:
+Rider and petrol expenses may be:
 
-* Always be general business expenses,
-* Be linked to particular orders when known,
-* Or support both approaches.
+- Recorded as general business expenses, or
+- Associated with a specific order when the relationship is known.
 
-**Stakeholder Decision:** Pending
+The system shall support both approaches.
 
----
+**Stakeholder Decision:** Both approaches supported
 
 # 5. Requirements Review Outcome
 

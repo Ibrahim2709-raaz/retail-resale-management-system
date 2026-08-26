@@ -362,6 +362,11 @@ The system shall restrict access to functionality based on the authenticated use
 **FR-AUTH-007**
 The system shall prevent customers from accessing administrative functionality.
 
+**FR-AUTH-008**
+Employee users may access product cost, product profit, business revenue,
+and customer outstanding-balance information unless future role configuration
+explicitly restricts such access.
+
 ---
 
 # 6.2 Brand, Category, and Product Classification
@@ -608,11 +613,15 @@ The system shall allow a custom discount to be applied to a sale.
 The system shall permit products to be sold at cost.
 
 **FR-PRICE-012**
-The system shall warn an authorized user when a proposed selling price is below final product cost.
+The system shall warn an authorized user when a proposed selling price
+is below the product's final cost.
 
 **FR-PRICE-013**
 The system shall not require a fixed percentage markup.
 
+**FR-PRICE-014**
+An authorized user shall be able to acknowledge the below-cost warning
+and continue the transaction.
 ---
 
 # 6.10 Product Search and Filtering
@@ -934,6 +943,13 @@ Approved returned products shall only be restored to available inventory if thei
 **FR-RET-008**
 The system shall retain the original sale record when a return occurs.
 
+**FR-RET-009**
+The system shall allow an approved refund to be recorded using cash
+or online transfer.
+
+**FR-RET-010**
+The system shall record the refund amount, date, method, and associated
+return transaction.
 ---
 
 # 6.19 Exchanges
@@ -962,6 +978,16 @@ The system shall update inventory appropriately for both products involved in an
 **FR-EXC-008**
 The system shall preserve the exchange history for audit and reporting purposes.
 
+**FR-EXC-009**
+When an exchange creates an amount owed to the customer, the system
+shall allow the amount to be refunded immediately.
+
+**FR-EXC-010**
+The system shall alternatively allow the amount to be retained as
+customer credit.
+
+**FR-EXC-011**
+The selected settlement method shall be recorded as part of the exchange.
 ---
 
 # 6.20 Expenses
@@ -990,6 +1016,14 @@ The system shall permit expenses to be associated with a purchase or order where
 
 **FR-EXP-007**
 Recorded business expenses shall be available for use in net-profit reporting.
+
+**FR-EXP-008**
+The system shall allow rider and petrol expenses to be recorded as
+general business expenses.
+
+**FR-EXP-009**
+The system shall allow rider and petrol expenses to be associated with
+a specific customer order when applicable.
 
 ---
 

@@ -57,6 +57,10 @@ The system shall warn the user when a proposed sale price is below final product
 BR-PRICE-006
 The business does not normally permit intentional below-cost sales.
 
+BR-PRICE-007
+A below-cost sale may proceed after an authorized user acknowledges
+the system warning.
+
 Reservation rules
 
 BR-RES-001
@@ -139,6 +143,9 @@ A returned item may only return to available inventory if it is suitable for res
 BR-RET-005
 The original sale record shall remain in the system after a return.
 
+BR-RET-006
+Approved refunds may be issued through cash or online transfer.
+
 Exchange rules
 
 BR-EXC-001
@@ -155,6 +162,10 @@ Both the returned and replacement products must have their inventory records upd
 
 BR-EXC-005
 Exchange history shall be preserved.
+
+BR-EXC-006
+Money owed to the customer after an exchange may either be refunded
+immediately or retained as customer credit.
 
 Delivery rules
 
@@ -238,6 +249,11 @@ Customer-facing users shall not have access to internal business or financial in
 BR-SEC-004
 Sensitive financial functionality shall be restricted to authorized internal users.
 
+Bussiness Expense 
+
+BR-EXP-001
+Rider and petrol expenses may be recorded either as general business
+expenses or associated with a specific order when applicable.
 
 ## Rule Governance
 
