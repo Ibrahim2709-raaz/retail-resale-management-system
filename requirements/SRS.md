@@ -3,7 +3,7 @@
 ## Retail Resale Management System
 
 **Document ID:** RRMS-SRS-001
-**Version:** 0.3
+**Version:** 0.4
 **Status:** Draft
 **Project Phase:** Requirements Engineering
 **Author:** Ibrahim Salman
@@ -16,7 +16,7 @@
 
 | Version | Date        | Author         | Description                                                 | Status |
 | ------- | ----------- | -------------- | ----------------------------------------------------------- | ------ |
-| 0.3     | August 2026 | Ibrahim Salman | Finalized online order-request inventory hold behavior      | Draft  |
+| 0.4     | August 2026 | Ibrahim Salman | Added non-functional requirements      | Draft  |
 
 ---
 
@@ -1244,3 +1244,353 @@ The dashboard shall display relevant notifications or business alerts.
 
 **FR-DASH-007**
 The dashboard should provide access to commonly used management functions.
+
+
+# 7. Non-Functional Requirements
+
+This section defines the quality, security, performance, reliability, usability, maintainability, and operational requirements of the Retail Resale Management System.
+
+---
+
+## 7.1 Security
+
+**NFR-SEC-001**
+The system shall require authenticated access for all internal administrative and employee functionality.
+
+**NFR-SEC-002**
+Passwords shall not be stored in plain text.
+
+**NFR-SEC-003**
+The system shall use secure password hashing appropriate to the implementation environment.
+
+**NFR-SEC-004**
+The system shall enforce role-based access control for protected functionality.
+
+**NFR-SEC-005**
+Administrative users shall be able to perform functions that may be unavailable to employees.
+
+**NFR-SEC-006**
+Customer-facing users shall not be able to access internal financial, purchasing, customer-credit, or administrative information.
+
+**NFR-SEC-007**
+Sensitive authentication credentials, database credentials, API keys, and secrets shall not be committed to the public source-code repository.
+
+**NFR-SEC-008**
+Production communication between clients and the deployed system shall use encrypted network transport.
+
+**NFR-SEC-009**
+The system shall protect administrative functionality against unauthorized requests.
+
+**NFR-SEC-010**
+The system shall validate user-provided input before processing or storing it.
+
+**NFR-SEC-011**
+The system shall take reasonable measures to prevent common web application vulnerabilities applicable to the selected technology stack.
+
+---
+
+# 7.2 Privacy and Customer Data Protection
+
+**NFR-PRIV-001**
+Customer personal information shall only be accessible to authorized internal users.
+
+**NFR-PRIV-002**
+The system shall not expose customer addresses, phone numbers, payment history, or outstanding balances through the public storefront.
+
+**NFR-PRIV-003**
+Real customer production data shall not be stored in the public GitHub repository.
+
+**NFR-PRIV-004**
+Development and testing environments should use anonymized, synthetic, or otherwise non-sensitive customer data wherever practical.
+
+**NFR-PRIV-005**
+The system shall collect only customer information required for legitimate business operations.
+
+---
+
+# 7.3 Performance
+
+**NFR-PERF-001**
+Common administrative pages should become usable within a reasonable time under normal business operating conditions.
+
+**NFR-PERF-002**
+Typical inventory searches should return results within two seconds under expected initial business load.
+
+**NFR-PERF-003**
+Normal product, customer, and order creation operations should complete without noticeable unnecessary delay.
+
+**NFR-PERF-004**
+The system should support at least several thousand product records without requiring fundamental redesign.
+
+**NFR-PERF-005**
+The system should support growth substantially beyond the business's current approximately 40 monthly product sales.
+
+**NFR-PERF-006**
+Public product images should be delivered in a size and format appropriate for normal web and mobile usage.
+
+---
+
+# 7.4 Availability
+
+**NFR-AVL-001**
+The production system should normally be available whenever business users require access.
+
+**NFR-AVL-002**
+The customer-facing storefront should be capable of continuous availability independent of normal business operating hours.
+
+**NFR-AVL-003**
+Planned maintenance should minimize disruption to business operations.
+
+**NFR-AVL-004**
+Temporary loss of a single user's device shall not result in loss of centrally stored business information.
+
+---
+
+# 7.5 Reliability and Data Integrity
+
+**NFR-REL-001**
+The system shall maintain consistent inventory quantities.
+
+**NFR-REL-002**
+A completed sale shall not result in negative available inventory.
+
+**NFR-REL-003**
+Financial transactions shall not be silently lost or overwritten.
+
+**NFR-REL-004**
+Recorded payments shall remain associated with the appropriate customer and order.
+
+**NFR-REL-005**
+Inventory, payment, return, exchange, and order operations that require multiple related data changes shall preserve system consistency if an operation fails.
+
+**NFR-REL-006**
+The system shall reject invalid operations rather than intentionally creating inconsistent business records.
+
+**NFR-REL-007**
+Historical transaction information required for accounting or business analysis shall remain accessible even if related product information changes later.
+
+---
+
+# 7.6 Backup and Recovery
+
+**NFR-BACK-001**
+Production business data shall be backed up regularly.
+
+**NFR-BACK-002**
+The deployed solution shall provide a documented procedure for recovering business data from backup.
+
+**NFR-BACK-003**
+Backups shall include critical transactional data required to reconstruct inventory, orders, payments, and customer balances.
+
+**NFR-BACK-004**
+Product images and business documents requiring long-term retention shall have an appropriate recovery strategy.
+
+**NFR-BACK-005**
+The project shall document the selected backup frequency before production deployment.
+
+---
+
+# 7.7 Usability
+
+**NFR-USE-001**
+The administrative interface shall be understandable to non-technical business users.
+
+**NFR-USE-002**
+Common operations shall minimize unnecessary data entry.
+
+**NFR-USE-003**
+Frequently performed tasks such as product lookup, sales creation, payment recording, and customer lookup should require minimal navigation.
+
+**NFR-USE-004**
+System messages and validation errors shall use understandable language.
+
+**NFR-USE-005**
+Destructive or financially significant actions should clearly communicate their effect before completion where appropriate.
+
+**NFR-USE-006**
+The system shall visually distinguish important states such as:
+
+* Available
+* Reserved
+* On Hold
+* Sold
+* Outstanding Payment
+* Failed Delivery
+* Returned
+
+**NFR-USE-007**
+The public storefront shall allow customers to browse products without requiring technical knowledge or account registration.
+
+---
+
+# 7.8 Mobile and Responsive Use
+
+**NFR-MOB-001**
+The customer-facing storefront shall support modern mobile devices.
+
+**NFR-MOB-002**
+Core administrative functionality shall be usable through a mobile browser.
+
+**NFR-MOB-003**
+The administrative interface shall also remain practical on desktop and laptop displays.
+
+**NFR-MOB-004**
+Core operations shall not depend exclusively on hover interactions or other desktop-only input behavior.
+
+---
+
+# 7.9 Accessibility
+
+**NFR-ACC-001**
+The user interface should provide sufficient visual contrast for important text and controls.
+
+**NFR-ACC-002**
+Interactive controls should contain meaningful text or accessible labels.
+
+**NFR-ACC-003**
+Important system state shall not be communicated solely through color.
+
+**NFR-ACC-004**
+The system should support keyboard navigation for primary administrative and storefront functions where practical.
+
+**NFR-ACC-005**
+Form validation should clearly identify the field and problem requiring correction.
+
+---
+
+# 7.10 Maintainability
+
+**NFR-MAIN-001**
+The software shall be organized into clearly separated responsibilities appropriate to the selected architecture.
+
+**NFR-MAIN-002**
+The project shall maintain source code through Git version control.
+
+**NFR-MAIN-003**
+Production code changes shall be traceable through repository history.
+
+**NFR-MAIN-004**
+Important application configuration shall be externalized from source code where appropriate.
+
+**NFR-MAIN-005**
+Repeated business logic should be centralized rather than duplicated across unrelated parts of the system.
+
+**NFR-MAIN-006**
+The project shall maintain technical documentation required for future maintenance.
+
+**NFR-MAIN-007**
+The system design should allow future features to be introduced without requiring complete replacement of the existing application.
+
+---
+
+# 7.11 Scalability
+
+**NFR-SCALE-001**
+The system shall be designed to support substantially more customers, products, orders, and employees than the current business volume.
+
+**NFR-SCALE-002**
+The initial design should not assume that the business will permanently remain limited to approximately 15 regular customers.
+
+**NFR-SCALE-003**
+The system should permit future growth in product image volume.
+
+**NFR-SCALE-004**
+The system should permit additional employee accounts and permissions without redesigning the authentication model.
+
+**NFR-SCALE-005**
+The architecture should permit future integration with additional sales channels and services where justified.
+
+---
+
+# 7.12 Auditability
+
+**NFR-AUD-001**
+Important financial records shall contain sufficient information to determine when the transaction occurred.
+
+**NFR-AUD-002**
+The system should record which authenticated internal user performed financially or operationally significant actions where practical.
+
+**NFR-AUD-003**
+Changes to payment, return, exchange, and inventory history shall remain explainable after the fact.
+
+**NFR-AUD-004**
+Historical reporting shall use preserved transaction information rather than relying exclusively on current product values.
+
+---
+
+# 7.13 Compatibility
+
+**NFR-COMP-001**
+The web application shall support current mainstream desktop and mobile web browsers.
+
+**NFR-COMP-002**
+The customer-facing interface shall function without requiring installation of a native application.
+
+**NFR-COMP-003**
+Generated PDF receipts shall be readable using commonly available PDF software.
+
+**NFR-COMP-004**
+Printable receipts shall be formatted so that they can be reasonably printed using standard consumer or business printing equipment.
+
+---
+
+# 7.14 Observability and Error Handling
+
+**NFR-OBS-001**
+The production system shall provide sufficient logging to diagnose application failures.
+
+**NFR-OBS-002**
+Logs shall not intentionally expose passwords or authentication secrets.
+
+**NFR-OBS-003**
+System failures presented to customers shall not unnecessarily disclose sensitive technical implementation information.
+
+**NFR-OBS-004**
+Important backend failures should be logged with sufficient context for troubleshooting.
+
+**NFR-OBS-005**
+The system should make operational failures distinguishable from user validation errors.
+
+---
+
+# 7.15 Testing Quality
+
+**NFR-TEST-001**
+Core business rules shall be covered by automated tests where practical.
+
+**NFR-TEST-002**
+Inventory quantity logic shall be tested.
+
+**NFR-TEST-003**
+Payment and outstanding-balance calculations shall be tested.
+
+**NFR-TEST-004**
+Reservation and temporary-hold behavior shall be tested.
+
+**NFR-TEST-005**
+Returns and exchanges shall be tested for correct inventory and financial effects.
+
+**NFR-TEST-006**
+Authorization rules shall be tested to verify that restricted users cannot access prohibited functionality.
+
+**NFR-TEST-007**
+The project shall include a documented testing process before production releases.
+
+---
+
+# 7.16 Documentation
+
+**NFR-DOC-001**
+Project requirements documentation shall be maintained with the source repository.
+
+**NFR-DOC-002**
+System design documentation shall be added before implementation of the applicable architectural components.
+
+**NFR-DOC-003**
+The project shall document local development setup once implementation begins.
+
+**NFR-DOC-004**
+The project shall document deployment configuration and operational procedures before production release.
+
+**NFR-DOC-005**
+Public-facing README documentation shall accurately reflect the current project state and shall not claim incomplete features as implemented.
