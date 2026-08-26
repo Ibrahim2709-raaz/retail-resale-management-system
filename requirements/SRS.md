@@ -3,7 +3,7 @@
 ## Retail Resale Management System
 
 **Document ID:** RRMS-SRS-001
-**Version:** 0.2
+**Version:** 0.3
 **Status:** Draft
 **Project Phase:** Requirements Engineering
 **Author:** Ibrahim Salman
@@ -16,7 +16,7 @@
 
 | Version | Date        | Author         | Description                                                 | Status |
 | ------- | ----------- | -------------- | ----------------------------------------------------------- | ------ |
-| 0.1     | August 2026 | Ibrahim Salman | Initial SRS created from stakeholder requirements discovery | Draft  |
+| 0.3     | August 2026 | Ibrahim Salman | Finalized online order-request inventory hold behavior      | Draft  |
 
 ---
 
@@ -773,8 +773,17 @@ The system shall allow an authorized user to approve an order request.
 **FR-ORD-006**
 The system shall allow an authorized user to reject an order request.
 
-**FR-ORD-007**
-Inventory and reservation behavior associated with pending order requests shall be formally defined before implementation to prevent duplicate sales.
+*FR-ORD-007
+When a customer submits an online order request, the requested inventory shall be placed on a temporary hold until an authorized business user approves or rejects the request.
+
+FR-ORD-008
+Temporary holds created by online order requests shall not expire automatically.
+
+FR-ORD-009
+An authorized business user shall manually release the temporary hold when an order request is rejected or cancelled.
+
+FR-ORD-010
+Inventory placed on a temporary hold for an online order request shall not be available for another confirmed sale unless the hold is manually released or overridden by an authorized user.
 
 ---
 
