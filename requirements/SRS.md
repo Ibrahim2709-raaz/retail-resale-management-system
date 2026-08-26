@@ -3,7 +3,7 @@
 ## Retail Resale Management System
 
 **Document ID:** RRMS-SRS-001
-**Version:** 0.1
+**Version:** 0.2
 **Status:** Draft
 **Project Phase:** Requirements Engineering
 **Author:** Ibrahim Salman
@@ -325,3 +325,913 @@ The following assumptions currently apply:
 | Source              | Retailer, website, physical store, or supply market from which products are purchased.                               |
 | POS                 | Point of Sale.                                                                                                       |
 | SKU                 | Stock Keeping Unit used to identify a product or inventory item.                                                     |
+
+# 6. Functional Requirements
+
+This section defines the required functional behavior of the Retail Resale Management System.
+
+Requirements are grouped by functional domain and assigned unique identifiers for future traceability, testing, and change management.
+
+The keyword **shall** indicates a mandatory system requirement.
+
+---
+
+## 6.1 Authentication and User Management
+
+**FR-AUTH-001**
+The system shall require administrative and employee users to authenticate before accessing protected business functionality.
+
+**FR-AUTH-002**
+The system shall support at least two internal user roles:
+
+* Administrator
+* Employee
+
+**FR-AUTH-003**
+The system shall permit multiple administrator accounts.
+
+**FR-AUTH-004**
+The system shall allow an administrator to create employee accounts.
+
+**FR-AUTH-005**
+The system shall allow an administrator to activate or deactivate employee accounts.
+
+**FR-AUTH-006**
+The system shall restrict access to functionality based on the authenticated user's assigned role.
+
+**FR-AUTH-007**
+The system shall prevent customers from accessing administrative functionality.
+
+---
+
+# 6.2 Brand, Category, and Product Classification
+
+**FR-CAT-001**
+The system shall allow administrators to create and manage product brands.
+
+**FR-CAT-002**
+The system shall allow administrators to create and manage product categories.
+
+**FR-CAT-003**
+The system shall allow categories to contain subcategories.
+
+**FR-CAT-004**
+The system shall allow products to be associated with a brand.
+
+**FR-CAT-005**
+The system shall allow products to be associated with a category and, where applicable, a subcategory.
+
+---
+
+# 6.3 Product Management
+
+**FR-PROD-001**
+The system shall allow authorized users to create product records.
+
+**FR-PROD-002**
+The system shall assign an internal unique identifier to every product record.
+
+**FR-PROD-003**
+The system shall support an internal SKU for products.
+
+**FR-PROD-004**
+The system shall allow a brand-provided SKU to be recorded when available.
+
+**FR-PROD-005**
+The system shall allow a barcode value to be recorded for a product when available.
+
+**FR-PROD-006**
+The system shall store the product name.
+
+**FR-PROD-007**
+The system shall store the product brand.
+
+**FR-PROD-008**
+The system shall store the product category.
+
+**FR-PROD-009**
+The system shall optionally store a product subcategory.
+
+**FR-PROD-010**
+The system shall store the product color.
+
+**FR-PROD-011**
+The system shall store the product material where applicable.
+
+**FR-PROD-012**
+The system shall store the product style where applicable.
+
+**FR-PROD-013**
+The system shall store the intended season where applicable.
+
+**FR-PROD-014**
+The system shall not require a clothing size for products.
+
+This reflects the current business model, which primarily sells unstitched clothing.
+
+**FR-PROD-015**
+The system shall allow notes to be attached to a product.
+
+**FR-PROD-016**
+The system shall allow an authorized user to edit product information.
+
+**FR-PROD-017**
+The system shall preserve product records required for historical sales and reporting rather than permanently removing referenced products.
+
+---
+
+# 6.4 Product Images and Documents
+
+**FR-MEDIA-001**
+The system shall allow at least one image to be associated with each product.
+
+**FR-MEDIA-002**
+The underlying system shall permit support for multiple images per product even though the current business generally uses one image.
+
+**FR-MEDIA-003**
+The system shall allow purchase receipts to be stored or referenced digitally.
+
+---
+
+# 6.5 Product Condition
+
+**FR-COND-001**
+The system shall allow the condition of a product to be recorded.
+
+**FR-COND-002**
+The system shall support at least the following conditions:
+
+* New with tags
+* New without tags
+* Opened
+* Defective
+* Damaged
+
+**FR-COND-003**
+The system shall prevent damaged or defective products from appearing as normally available stock unless explicitly authorized.
+
+---
+
+# 6.6 Purchasing and Product Acquisition
+
+**FR-PUR-001**
+The system shall allow authorized users to record business purchases.
+
+**FR-PUR-002**
+The system shall record the source or store from which a purchase was made.
+
+**FR-PUR-003**
+The system shall support both online and physical purchase sources.
+
+**FR-PUR-004**
+The system shall allow an external order number to be recorded for online purchases.
+
+**FR-PUR-005**
+The system shall record the purchase date.
+
+**FR-PUR-006**
+The system shall record the purchase price paid for each purchased product.
+
+**FR-PUR-007**
+The system shall allow shipping costs associated with a purchase to be recorded.
+
+**FR-PUR-008**
+The system shall allow rider-related or transport expenses associated with purchasing to be recorded where applicable.
+
+**FR-PUR-009**
+The system shall allow petrol expenses associated with business purchasing or delivery activity to be recorded.
+
+**FR-PUR-010**
+The system shall distinguish between purchases intended for:
+
+* Business resale
+* Personal use
+
+**FR-PUR-011**
+Products designated as personal purchases shall not be included in business inventory calculations.
+
+**FR-PUR-012**
+Personal purchases shall not contribute to business revenue or profit reports.
+
+---
+
+# 6.7 Purchase and Inventory Status
+
+**FR-INV-001**
+The system shall distinguish between products that have been ordered and products that have physically been received.
+
+**FR-INV-002**
+A product shall not be considered sellable inventory until it has been physically received.
+
+**FR-INV-003**
+The system shall support the following relevant acquisition and inventory states:
+
+* Ordered
+* In Transit
+* Received
+* Available
+* Reserved
+* On Hold
+* Sold
+* Delivered
+* Damaged
+* Cancelled
+* Returned
+* Exchanged
+
+**FR-INV-004**
+The system shall allow an authorized user to mark an ordered product as received.
+
+**FR-INV-005**
+Once a valid business product has been received, the system shall allow it to become available inventory.
+
+**FR-INV-006**
+The system shall not permit a product to be sold before it has been physically received.
+
+---
+
+# 6.8 Inventory Quantity
+
+**FR-QTY-001**
+The system shall allow a quantity to be associated with a product.
+
+**FR-QTY-002**
+The system shall support products for which only one physical unit exists.
+
+**FR-QTY-003**
+The system shall support rare situations in which multiple identical units of the same product are purchased.
+
+**FR-QTY-004**
+The system shall reduce available quantity when a unit is sold.
+
+**FR-QTY-005**
+The system shall prevent available inventory quantity from becoming negative.
+
+**FR-QTY-006**
+The system shall not require low-stock notifications.
+
+---
+
+# 6.9 Product Pricing
+
+**FR-PRICE-001**
+The system shall store the original retail price when available.
+
+**FR-PRICE-002**
+The system shall store the sale or acquisition price paid by the business.
+
+**FR-PRICE-003**
+The system shall calculate or store the final purchase cost attributable to a product.
+
+**FR-PRICE-004**
+The system shall store the intended selling price.
+
+**FR-PRICE-005**
+The system shall allow a minimum acceptable selling price to be recorded.
+
+**FR-PRICE-006**
+The system shall calculate the monetary discount between original retail price and current selling price where the original retail price is available.
+
+**FR-PRICE-007**
+The system shall calculate the percentage discount from the original retail price where appropriate.
+
+**FR-PRICE-008**
+The system shall display estimated profit for a proposed selling price.
+
+**FR-PRICE-009**
+The system shall allow authorized users to manually change the final selling price during a sale.
+
+**FR-PRICE-010**
+The system shall allow a custom discount to be applied to a sale.
+
+**FR-PRICE-011**
+The system shall permit products to be sold at cost.
+
+**FR-PRICE-012**
+The system shall warn an authorized user when a proposed selling price is below final product cost.
+
+**FR-PRICE-013**
+The system shall not require a fixed percentage markup.
+
+---
+
+# 6.10 Product Search and Filtering
+
+**FR-SEARCH-001**
+The system shall allow authorized users to search inventory by product name.
+
+**FR-SEARCH-002**
+The system shall allow products to be searched or filtered by brand.
+
+**FR-SEARCH-003**
+The system shall allow products to be searched or filtered by category or clothing type.
+
+**FR-SEARCH-004**
+The system shall allow products to be searched or filtered by color.
+
+**FR-SEARCH-005**
+The system should support additional filtering by:
+
+* Material
+* Style
+* Season
+* Inventory status
+* Purchase source
+* Purchase date
+* Price range
+
+---
+
+# 6.11 Customer Management
+
+**FR-CUS-001**
+The system shall allow authorized users to create customer records.
+
+**FR-CUS-002**
+The system shall store the customer's name.
+
+**FR-CUS-003**
+The system shall store the customer's phone number.
+
+**FR-CUS-004**
+The system shall store the customer's WhatsApp number where different from the primary phone number.
+
+**FR-CUS-005**
+The system shall allow a customer address to be stored.
+
+**FR-CUS-006**
+The system shall store the customer's city.
+
+**FR-CUS-007**
+The system shall allow preferred brands to be associated with a customer.
+
+**FR-CUS-008**
+The system shall allow preferred clothing types to be associated with a customer.
+
+**FR-CUS-009**
+The system shall maintain customer purchase history.
+
+**FR-CUS-010**
+The system shall calculate and display the customer's current outstanding balance.
+
+**FR-CUS-011**
+The system shall maintain historical customer transactions.
+
+**FR-CUS-012**
+The system shall not require a customer's birthday.
+
+**FR-CUS-013**
+The system shall not require customer email addresses.
+
+**FR-CUS-014**
+The system shall not require customer Instagram information.
+
+---
+
+# 6.12 Reservation Management
+
+**FR-RES-001**
+The system shall allow available inventory to be reserved for a customer.
+
+**FR-RES-002**
+A reservation shall have a default duration of 48 hours.
+
+**FR-RES-003**
+The system shall allow an authorized user to manually extend a reservation.
+
+**FR-RES-004**
+The system shall record the reservation start time.
+
+**FR-RES-005**
+The system shall record the reservation expiry time.
+
+**FR-RES-006**
+The system shall notify authorized users when a reservation has reached or passed its expiry time.
+
+**FR-RES-007**
+The system shall not automatically release an expired reservation without authorization from a business user.
+
+**FR-RES-008**
+An actively reserved inventory unit shall not be sold to another customer unless the reservation is first cancelled, released, or overridden by an authorized user.
+
+**FR-RES-009**
+The system shall allow an authorized user to cancel or release a reservation.
+
+---
+
+# 6.13 Sales and Point of Sale
+
+**FR-SALE-001**
+The system shall allow authorized users to create a sale.
+
+**FR-SALE-002**
+A sale shall be associated with a customer.
+
+**FR-SALE-003**
+A sale shall support one or more products.
+
+**FR-SALE-004**
+The system shall record the selling price of each item at the time of sale.
+
+**FR-SALE-005**
+The system shall preserve the transaction price even if the product's default selling price changes later.
+
+**FR-SALE-006**
+The system shall allow a custom discount to be recorded.
+
+**FR-SALE-007**
+The system shall calculate the final order amount.
+
+**FR-SALE-008**
+The system shall update inventory after a sale is confirmed.
+
+**FR-SALE-009**
+The system shall maintain historical sales records.
+
+**FR-SALE-010**
+The system shall support cash-on-delivery sales.
+
+---
+
+# 6.14 Customer Order Requests
+
+**FR-ORD-001**
+The customer-facing storefront shall allow customers to submit an order request without creating an account.
+
+**FR-ORD-002**
+A submitted online order request shall not automatically become a confirmed sale.
+
+**FR-ORD-003**
+The system shall place customer-submitted orders into a pending approval state.
+
+**FR-ORD-004**
+An authorized business user shall review an online order request before confirming or rejecting it.
+
+**FR-ORD-005**
+The system shall allow an authorized user to approve an order request.
+
+**FR-ORD-006**
+The system shall allow an authorized user to reject an order request.
+
+**FR-ORD-007**
+Inventory and reservation behavior associated with pending order requests shall be formally defined before implementation to prevent duplicate sales.
+
+---
+
+# 6.15 Payments
+
+**FR-PAY-001**
+The system shall support full payments.
+
+**FR-PAY-002**
+The system shall support partial payments.
+
+**FR-PAY-003**
+The system shall support customer deposits.
+
+**FR-PAY-004**
+The system shall support credit sales.
+
+**FR-PAY-005**
+The system shall support at least the following payment methods:
+
+* Cash
+* Bank transfer
+* JazzCash
+* Cash on delivery
+
+**FR-PAY-006**
+The system shall record each received payment as an individual transaction.
+
+**FR-PAY-007**
+The system shall record the payment amount.
+
+**FR-PAY-008**
+The system shall record the payment date.
+
+**FR-PAY-009**
+The system shall record the applicable payment method.
+
+**FR-PAY-010**
+The system shall calculate the remaining unpaid balance for an order.
+
+**FR-PAY-011**
+The system shall calculate the total outstanding balance associated with a customer.
+
+**FR-PAY-012**
+The system shall support the following payment states:
+
+* Unpaid
+* Partially Paid
+* Paid
+
+**FR-PAY-013**
+The system shall not require every credit sale to have a fixed payment due date.
+
+**FR-PAY-014**
+The system shall allow an optional payment due date to be recorded when one is agreed with the customer.
+
+**FR-PAY-015**
+The system shall not enforce customer credit limits.
+
+---
+
+# 6.16 Customer Credit Ledger
+
+**FR-CREDIT-001**
+The system shall maintain a financial ledger for customer credit activity.
+
+**FR-CREDIT-002**
+The ledger shall identify amounts charged to the customer.
+
+**FR-CREDIT-003**
+The ledger shall identify payments received from the customer.
+
+**FR-CREDIT-004**
+The ledger shall maintain a running outstanding balance.
+
+**FR-CREDIT-005**
+Authorized users shall be able to review a customer's outstanding transactions.
+
+**FR-CREDIT-006**
+Authorized users shall be able to review a customer's historical payments.
+
+**FR-CREDIT-007**
+Where a due date exists, the system shall be capable of identifying unpaid amounts whose due date has passed.
+
+---
+
+# 6.17 Delivery Management
+
+**FR-DEL-001**
+The system shall allow delivery information to be associated with an order.
+
+**FR-DEL-002**
+The system shall record the customer delivery address.
+
+**FR-DEL-003**
+The system shall record the applicable delivery fee.
+
+**FR-DEL-004**
+The system shall support rider-based deliveries.
+
+**FR-DEL-005**
+The system shall generate or assign an internal unique tracking number for deliveries.
+
+**FR-DEL-006**
+The internal tracking number shall not depend on an external courier provider.
+
+**FR-DEL-007**
+The system shall support the following delivery states:
+
+* Processing
+* Packed
+* Shipped
+* Out for Delivery
+* Delivered
+* Failed Delivery
+
+**FR-DEL-008**
+The system shall allow authorized users to update delivery status.
+
+**FR-DEL-009**
+The system shall allow rider-related delivery costs to be recorded.
+
+---
+
+# 6.18 Returns
+
+**FR-RET-001**
+The system shall support customer returns.
+
+**FR-RET-002**
+A standard return shall only be accepted within seven days of the relevant sale.
+
+**FR-RET-003**
+A returned product shall be required to be in its original condition.
+
+**FR-RET-004**
+The system shall record the date of the return.
+
+**FR-RET-005**
+The system shall record the reason for the return.
+
+**FR-RET-006**
+The system shall allow an authorized user to approve or reject a return.
+
+**FR-RET-007**
+Approved returned products shall only be restored to available inventory if their condition permits resale.
+
+**FR-RET-008**
+The system shall retain the original sale record when a return occurs.
+
+---
+
+# 6.19 Exchanges
+
+**FR-EXC-001**
+The system shall support product exchanges.
+
+**FR-EXC-002**
+The system shall record the product being returned as part of the exchange.
+
+**FR-EXC-003**
+The system shall record the replacement product.
+
+**FR-EXC-004**
+The system shall calculate any monetary difference between the returned product value and replacement product value.
+
+**FR-EXC-005**
+If the replacement product costs more, the system shall record the additional amount owed by the customer.
+
+**FR-EXC-006**
+If the replacement product costs less, the system shall record the amount owed back to the customer.
+
+**FR-EXC-007**
+The system shall update inventory appropriately for both products involved in an exchange.
+
+**FR-EXC-008**
+The system shall preserve the exchange history for audit and reporting purposes.
+
+---
+
+# 6.20 Expenses
+
+**FR-EXP-001**
+The system shall allow authorized users to record business expenses.
+
+**FR-EXP-002**
+The system shall support at least the following expense categories:
+
+* Shipping
+* Rider costs
+* Petrol
+
+**FR-EXP-003**
+The system shall record the expense amount.
+
+**FR-EXP-004**
+The system shall record the expense date.
+
+**FR-EXP-005**
+The system shall allow a description or note to be associated with an expense.
+
+**FR-EXP-006**
+The system shall permit expenses to be associated with a purchase or order where applicable.
+
+**FR-EXP-007**
+Recorded business expenses shall be available for use in net-profit reporting.
+
+---
+
+# 6.21 Receipt and Invoice Generation
+
+**FR-REC-001**
+The system shall generate a receipt or invoice for completed sales.
+
+**FR-REC-002**
+The receipt shall contain the business name.
+
+**FR-REC-003**
+The receipt shall support inclusion of the business logo.
+
+**FR-REC-004**
+The receipt shall contain a unique transaction or invoice number.
+
+**FR-REC-005**
+The receipt shall display purchased products.
+
+**FR-REC-006**
+The receipt shall display applicable prices and discounts.
+
+**FR-REC-007**
+The receipt shall display the order total.
+
+**FR-REC-008**
+The receipt shall display the amount paid.
+
+**FR-REC-009**
+The receipt shall display any remaining customer balance.
+
+**FR-REC-010**
+The system shall allow a receipt to be printed.
+
+**FR-REC-011**
+The system shall allow a receipt to be generated in PDF form.
+
+**FR-REC-012**
+The system shall support sharing receipt information through WhatsApp.
+
+---
+
+# 6.22 Storefront Product Publishing
+
+**FR-STORE-001**
+The system shall allow authorized users to choose whether a product is visible on the customer-facing storefront.
+
+**FR-STORE-002**
+Available products shall be capable of being displayed on the storefront.
+
+**FR-STORE-003**
+Sold products may remain visible on the storefront.
+
+**FR-STORE-004**
+Sold products displayed on the storefront shall clearly indicate that they are sold or unavailable.
+
+**FR-STORE-005**
+The system shall support products marked as Coming Soon.
+
+**FR-STORE-006**
+The system shall allow the business to choose whether the original retail price is displayed for an individual product.
+
+**FR-STORE-007**
+Where the original retail price is displayed, the storefront shall be capable of displaying the resulting discount percentage.
+
+**FR-STORE-008**
+The storefront shall not be required to publicly display exact inventory quantity.
+
+**FR-STORE-009**
+The storefront shall not be required to display low-stock messages such as "Only 1 left."
+
+---
+
+# 6.23 Storefront Search and Browsing
+
+**FR-WEB-001**
+Customers shall be able to browse products without authentication.
+
+**FR-WEB-002**
+Customers shall be able to search products by brand.
+
+**FR-WEB-003**
+Customers shall be able to search or filter products by clothing type or category.
+
+**FR-WEB-004**
+Customers shall be able to search or filter products by color.
+
+**FR-WEB-005**
+Customers shall be able to view product details.
+
+**FR-WEB-006**
+Customers shall be able to view the product image.
+
+**FR-WEB-007**
+Customers shall be able to view the current selling price.
+
+**FR-WEB-008**
+Customers shall be able to submit an order request as guests.
+
+---
+
+# 6.24 WhatsApp Support
+
+**FR-WA-001**
+The system shall support sharing product information through WhatsApp.
+
+**FR-WA-002**
+A shared product reference should contain sufficient information or a link to identify the relevant product.
+
+**FR-WA-003**
+The system should support a customer enquiry action that identifies the product being discussed.
+
+**FR-WA-004**
+The system shall support sharing receipt information through WhatsApp.
+
+---
+
+# 6.25 Notifications
+
+**FR-NOT-001**
+The system shall support notifications for reservation expiry.
+
+**FR-NOT-002**
+The system shall support notifications for outstanding payments where appropriate.
+
+**FR-NOT-003**
+The system shall support notifications for inventory that has remained unsold for a configurable period such as 90 days.
+
+**FR-NOT-004**
+The system shall support notifications related to received purchasing shipments.
+
+**FR-NOT-005**
+The system shall support notifications for new customer order requests.
+
+**FR-NOT-006**
+The system shall support notifications for return requests.
+
+**FR-NOT-007**
+The system shall support notifications for pending deliveries.
+
+**FR-NOT-008**
+The system may support future price-reduction suggestions for aged inventory.
+
+**FR-NOT-009**
+The system shall not require low-stock notifications.
+
+**FR-NOT-010**
+The system shall not require customer birthday reminders.
+
+---
+
+# 6.26 Reporting and Analytics
+
+**FR-REP-001**
+The system shall calculate total sales revenue over a selected period.
+
+**FR-REP-002**
+The system shall calculate gross profit over a selected period.
+
+**FR-REP-003**
+The system shall calculate net profit using applicable recorded business expenses.
+
+**FR-REP-004**
+The system shall calculate current inventory value.
+
+**FR-REP-005**
+The system shall report the number of items sold.
+
+**FR-REP-006**
+The system shall calculate average selling price.
+
+**FR-REP-007**
+The system shall calculate average product margin where sufficient data exists.
+
+**FR-REP-008**
+The system shall report sales by brand.
+
+**FR-REP-009**
+The system shall report sales by category.
+
+**FR-REP-010**
+The system shall report sales by month.
+
+**FR-REP-011**
+The system shall identify top customers according to defined sales criteria.
+
+**FR-REP-012**
+The system shall support analysis of customer profitability.
+
+**FR-REP-013**
+The system shall identify top-selling brands.
+
+**FR-REP-014**
+The system shall report products that have remained unsold for more than 30 days.
+
+**FR-REP-015**
+The system shall report products that have remained unsold for more than 90 days.
+
+**FR-REP-016**
+The system shall report total outstanding customer balances.
+
+**FR-REP-017**
+The system shall allow administrators to view historical business performance.
+
+---
+
+# 6.27 Auditability and Historical Records
+
+**FR-AUD-001**
+The system shall preserve historical sales transactions.
+
+**FR-AUD-002**
+The system shall preserve payment transaction history.
+
+**FR-AUD-003**
+The system shall preserve return history.
+
+**FR-AUD-004**
+The system shall preserve exchange history.
+
+**FR-AUD-005**
+The system shall preserve relevant inventory changes required to explain product availability.
+
+**FR-AUD-006**
+Financial transaction records shall not be silently overwritten when subsequent corrections are required.
+
+**FR-AUD-007**
+Changes that materially affect financial or inventory history should be traceable to the relevant business action.
+
+---
+
+# 6.28 Administrative Dashboard
+
+**FR-DASH-001**
+The system shall provide administrators with a business dashboard.
+
+**FR-DASH-002**
+The dashboard shall display current sales revenue for a selected period.
+
+**FR-DASH-003**
+The dashboard shall display profit information.
+
+**FR-DASH-004**
+The dashboard shall display current inventory value.
+
+**FR-DASH-005**
+The dashboard shall display outstanding customer credit.
+
+**FR-DASH-006**
+The dashboard shall display relevant notifications or business alerts.
+
+**FR-DASH-007**
+The dashboard should provide access to commonly used management functions.
