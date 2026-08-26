@@ -3,7 +3,7 @@
 ## Retail Resale Management System
 
 **Document ID:** RRMS-SRS-001
-**Version:** 0.4
+**Version:** 0.5
 **Status:** Draft
 **Project Phase:** Requirements Engineering
 **Author:** Ibrahim Salman
@@ -16,7 +16,7 @@
 
 | Version | Date        | Author         | Description                                                 | Status |
 | ------- | ----------- | -------------- | ----------------------------------------------------------- | ------ |
-| 0.4     | August 2026 | Ibrahim Salman | Added non-functional requirements      | Draft  |
+| 0.5     | August 2026 | Ibrahim Salman | Defined release scope, exclusions, constraints, dependencies and Version 1 acceptance criteria      | Draft  |
 
 ---
 
@@ -1594,3 +1594,780 @@ The project shall document deployment configuration and operational procedures b
 
 **NFR-DOC-005**
 Public-facing README documentation shall accurately reflect the current project state and shall not claim incomplete features as implemented.
+
+
+# 8. Scope Boundaries
+
+## 8.1 Overall Product Scope
+
+The Retail Resale Management System is intended to provide a centralized platform for managing the business's product acquisition, inventory, customers, sales, payments, credit balances, reservations, deliveries, receipts, reporting, and customer-facing product discovery.
+
+The complete product vision may be delivered incrementally across multiple releases.
+
+The existence of a requirement in the long-term SRS does not necessarily mean that requirement must be included in the first production release.
+
+Release-specific scope shall therefore be explicitly defined and controlled.
+
+---
+
+## 8.2 Version 1 Objective
+
+Version 1 shall focus on replacing the most important internal manual business processes currently performed using Microsoft Excel, handwritten notebooks, receipts, and memory.
+
+The primary objective of Version 1 is to provide a reliable internal business-management system before advanced customer-facing functionality is introduced.
+
+Version 1 shall prioritize:
+
+* Accurate inventory records.
+* Purchasing records.
+* Customer management.
+* Sales processing.
+* Customer credit management.
+* Payment tracking.
+* Reservations.
+* Returns and exchanges.
+* Delivery tracking.
+* Receipts.
+* Basic business analytics.
+* Administrative security.
+
+---
+
+# 9. Version 1 Mandatory Scope
+
+The following capabilities are mandatory for the first production-ready release.
+
+## 9.1 Authentication and Users
+
+Version 1 shall include:
+
+* Administrative authentication.
+* Multiple administrator accounts.
+* Employee accounts.
+* Role-based authorization.
+* Account activation and deactivation.
+
+---
+
+## 9.2 Product Management
+
+Version 1 shall include:
+
+* Product creation.
+* Product editing.
+* Product identification.
+* SKU support.
+* Brand management.
+* Category management.
+* Subcategory support.
+* Color.
+* Material.
+* Style.
+* Season.
+* Product condition.
+* Product image.
+* Pricing information.
+* Quantity.
+* Notes.
+* Product lifecycle status.
+
+---
+
+## 9.3 Purchasing
+
+Version 1 shall include:
+
+* Purchase recording.
+* Purchase source/store.
+* Online and physical purchase types.
+* Purchase date.
+* External order number where applicable.
+* Receipt attachment or reference.
+* Product acquisition cost.
+* Shipping expense.
+* Business versus personal purchase distinction.
+* Product receiving workflow.
+
+---
+
+## 9.4 Inventory
+
+Version 1 shall include:
+
+* Ordered inventory tracking.
+* In-transit products.
+* Receiving products.
+* Available inventory.
+* Reserved inventory.
+* On-hold inventory.
+* Sold inventory.
+* Damaged inventory.
+* Inventory quantity tracking.
+* Prevention of negative inventory.
+* Inventory search and filtering.
+
+---
+
+## 9.5 Customer Management
+
+Version 1 shall include:
+
+* Customer name.
+* Phone number.
+* WhatsApp number.
+* Address.
+* City.
+* Preferred brands.
+* Preferred clothing types.
+* Purchase history.
+* Outstanding balance.
+* Customer transaction history.
+
+---
+
+## 9.6 Reservations
+
+Version 1 shall include:
+
+* Customer reservations.
+* Default 48-hour reservation period.
+* Manual reservation extension.
+* Reservation expiry notification.
+* Manual reservation release.
+* Prevention of conflicting sales while inventory remains reserved.
+
+---
+
+## 9.7 Sales and POS
+
+Version 1 shall include:
+
+* Internal sale creation.
+* Customer association.
+* Multiple products per sale.
+* Custom selling price.
+* Discounts.
+* Final order calculation.
+* Inventory adjustment.
+* Historical sales records.
+* Cash-on-delivery support.
+
+---
+
+## 9.8 Payments and Credit
+
+Version 1 shall include:
+
+* Full payments.
+* Partial payments.
+* Deposits.
+* Credit sales.
+* Cash payments.
+* Bank transfer.
+* JazzCash.
+* Cash on delivery.
+* Individual payment transactions.
+* Remaining order balance.
+* Customer outstanding balance.
+* Optional payment due dates.
+* Customer credit ledger.
+
+---
+
+## 9.9 Delivery
+
+Version 1 shall include:
+
+* Delivery information.
+* Customer delivery address.
+* Delivery fee.
+* Internal delivery tracking/reference number.
+* Rider-based delivery workflow.
+* Delivery status.
+* Delivery history.
+
+---
+
+## 9.10 Returns and Exchanges
+
+Version 1 shall include:
+
+* Returns within seven days.
+* Return-condition validation.
+* Return approval.
+* Inventory restoration where appropriate.
+* Exchange processing.
+* Price-difference calculation.
+* Additional customer payment where required.
+* Amount owed back to the customer where required.
+* Exchange history.
+
+---
+
+## 9.11 Expenses
+
+Version 1 shall include basic business expense recording for:
+
+* Shipping.
+* Rider expenses.
+* Petrol expenses.
+
+Version 1 shall support using recorded expenses in net-profit reporting.
+
+---
+
+## 9.12 Receipts
+
+Version 1 shall include:
+
+* Unique invoice/receipt number.
+* Business name.
+* Business logo support.
+* Customer information.
+* Product information.
+* Prices.
+* Discounts.
+* Total amount.
+* Amount paid.
+* Remaining balance.
+* Printable receipt.
+* PDF receipt.
+
+WhatsApp-friendly receipt sharing may be implemented using a generated receipt or shareable document rather than requiring direct WhatsApp API integration.
+
+---
+
+## 9.13 Dashboard and Reporting
+
+Version 1 shall include reporting for:
+
+* Revenue.
+* Gross profit.
+* Net profit.
+* Current inventory value.
+* Number of items sold.
+* Outstanding customer credit.
+* Monthly sales.
+* Sales by brand.
+* Sales by category.
+* Top customers.
+* Inventory older than 30 days.
+* Inventory older than 90 days.
+
+The Version 1 dashboard does not need to contain every possible analytical visualization defined in the long-term product requirements.
+
+---
+
+# 10. Version 1 Exclusions
+
+The following capabilities are explicitly outside the mandatory scope of Version 1.
+
+They may be considered for later releases.
+
+## 10.1 Public Online Storefront
+
+A complete customer-facing e-commerce storefront is not mandatory for Version 1.
+
+This includes:
+
+* Public product browsing.
+* Guest online checkout.
+* Online order requests.
+* Coming Soon collections.
+* Public sold-product history.
+* Customer product filtering.
+
+The internal system should nevertheless be designed so that a storefront can be introduced later without replacing the core inventory and order-management system.
+
+---
+
+## 10.2 Automated Online Payments
+
+Version 1 shall not require integration with:
+
+* Credit-card processors.
+* Debit-card processors.
+* Online payment gateways.
+* Easypaisa APIs.
+* JazzCash merchant APIs.
+* Banking APIs.
+
+Payments may be recorded manually by authorized business users.
+
+---
+
+## 10.3 Direct WhatsApp Business API Integration
+
+Version 1 shall not require automatic messaging through the WhatsApp Business API.
+
+Version 1 may support:
+
+* Copyable product information.
+* Shareable links.
+* PDF receipts.
+* WhatsApp-compatible receipt sharing.
+
+Full API automation may be introduced later.
+
+---
+
+## 10.4 Native Mobile Applications
+
+Version 1 shall not require separate:
+
+* Android applications.
+* iOS applications.
+
+The system shall instead provide responsive web access.
+
+---
+
+## 10.5 Artificial Intelligence and Machine Learning
+
+Version 1 shall not require:
+
+* AI-generated pricing.
+* Demand prediction.
+* Customer recommendation algorithms.
+* Automated product descriptions.
+* AI sales forecasting.
+* Customer segmentation models.
+
+These features require reliable historical business data and shall only be considered after sufficient production data has been collected.
+
+---
+
+## 10.6 Advanced Inventory Forecasting
+
+Version 1 shall not require:
+
+* Automatic restocking.
+* Low-stock alerts.
+* Supplier replenishment.
+* Demand-based stock purchasing.
+
+The current business generally purchases discounted opportunities rather than maintaining standard replenishment inventory.
+
+---
+
+## 10.7 Courier Integrations
+
+Version 1 shall not require integration with external courier providers.
+
+The business currently uses riders and shall use internally generated delivery reference numbers.
+
+---
+
+## 10.8 International Operations
+
+Version 1 shall not require:
+
+* International delivery.
+* Multi-currency accounting.
+* Foreign taxation.
+* Customs management.
+* International payment processing.
+
+The initial business currency shall be PKR.
+
+---
+
+## 10.9 Advanced Accounting
+
+The system is not intended to replace professional accounting software in Version 1.
+
+Version 1 shall not require:
+
+* Double-entry bookkeeping.
+* General ledger accounting.
+* Tax filing.
+* Payroll.
+* Formal financial statements.
+* Regulatory accounting reports.
+
+Business reports are intended for operational management purposes.
+
+---
+
+# 11. Future Release Candidates
+
+The following capabilities may be considered after Version 1 has been successfully adopted.
+
+Potential Version 2 capabilities include:
+
+* Public customer storefront.
+* Guest order requests.
+* Temporary online inventory holds.
+* WhatsApp product sharing.
+* Product collections.
+* Coming Soon products.
+* Sold-product visibility.
+* Extended dashboards.
+* Improved inventory-ageing analysis.
+* Customer enquiry functionality.
+
+Potential later releases may include:
+
+* Barcode scanning.
+* Advanced employee permissions.
+* Supplier analytics.
+* Automated reminders.
+* Customer targeting.
+* Price recommendations.
+* Demand forecasting.
+* Recommendation systems.
+* Additional sales-channel integrations.
+
+These items are roadmap candidates and shall not be treated as committed functionality until formally added to an approved release scope.
+
+---
+
+# 12. Project Constraints
+
+## 12.1 Business Process Constraints
+
+The software must accommodate the existing business rather than requiring immediate replacement of all current practices.
+
+WhatsApp is currently a major communication and marketing channel.
+
+The system must therefore be capable of operating alongside WhatsApp-based sales activity.
+
+---
+
+## 12.2 Inventory Constraints
+
+The business primarily sells unstitched clothing.
+
+Size shall therefore not be mandatory.
+
+Products are not considered sellable until physically received.
+
+Identical products may occasionally exist in quantities greater than one.
+
+---
+
+## 12.3 Financial Constraints
+
+The business:
+
+* Does not use a fixed markup percentage.
+* Allows negotiated prices.
+* Allows sales at cost.
+* Does not normally permit sales below cost.
+* Allows credit sales.
+* Allows partial payments.
+* Does not use fixed customer credit limits.
+* Does not always define credit payment deadlines.
+
+The software shall therefore support flexible financial workflows.
+
+---
+
+## 12.4 Operational Constraints
+
+Inventory is currently stored at the business owner's residence.
+
+No mandatory shelf or warehouse-location structure currently exists.
+
+The system shall not require storage-location assignment in Version 1.
+
+---
+
+## 12.5 Technical Constraints
+
+No final implementation technology shall be considered mandatory solely because it was discussed before formal architecture evaluation.
+
+Technology selection must consider:
+
+* Functional requirements.
+* Security.
+* Maintainability.
+* Developer experience.
+* Hosting cost.
+* Scalability.
+* Deployment complexity.
+* Portfolio and educational value.
+
+---
+
+# 13. External Dependencies
+
+The system may depend on external infrastructure or services.
+
+Possible dependencies include:
+
+* Application hosting.
+* Database hosting.
+* Image/document storage.
+* Email or notification services.
+* PDF generation capability.
+* Domain registration.
+* HTTPS/TLS certificates.
+* Future WhatsApp services.
+
+Specific providers shall be selected during architecture and deployment design.
+
+---
+
+# 14. Assumptions Affecting Delivery
+
+The following assumptions apply to the initial project:
+
+1. At least one business administrator will participate in testing.
+2. The business owner will validate workflows during development.
+3. Development will initially use test or synthetic customer data.
+4. Real business data will only be migrated after the applicable features are validated.
+5. Internet connectivity will normally be available during system use.
+6. The system will initially serve one business organization.
+7. Multi-company or franchise functionality is not required in Version 1.
+8. Initial transaction volume will remain relatively small compared with large commercial retail systems.
+9. Business processes may evolve as the system is tested with real operations.
+
+---
+
+# 15. Version 1 Acceptance Criteria
+
+Version 1 shall not be considered complete merely because all screens have been implemented.
+
+Completion requires successful end-to-end validation of the primary business workflows.
+
+## AC-V1-001 — Product Acquisition
+
+Given an authorized administrator has purchased a business product,
+
+the administrator must be able to:
+
+1. Record the purchase.
+2. Record the source.
+3. Record its cost.
+4. Record shipping where applicable.
+5. Attach or reference the receipt.
+6. Mark the product as ordered or in transit.
+7. Receive the product.
+8. Make the product available as inventory.
+
+The product must not become sellable before receiving.
+
+---
+
+## AC-V1-002 — Product Inventory
+
+Given a physically received product,
+
+an authorized user must be able to:
+
+1. Enter its product information.
+2. Assign its brand and classification.
+3. Record pricing.
+4. Store its image.
+5. Record quantity.
+6. Find it through inventory search.
+7. determine its current availability.
+
+---
+
+## AC-V1-003 — Customer Creation
+
+An authorized user must be able to create a customer containing the business-required contact information and subsequently locate that customer.
+
+---
+
+## AC-V1-004 — Standard Sale
+
+Given an available product and an existing customer,
+
+an authorized user must be able to:
+
+1. Create a sale.
+2. Select the customer.
+3. Select the product.
+4. Set the transaction price.
+5. Apply a discount if required.
+6. Record payment.
+7. Confirm the sale.
+8. Update inventory.
+9. Generate a receipt.
+
+The same sold inventory unit must not remain available for another standard sale.
+
+---
+
+## AC-V1-005 — Partial Payment
+
+Given an order valued at PKR 10,000 where the customer pays PKR 4,000,
+
+the system must:
+
+1. Record the PKR 4,000 payment.
+2. Preserve the original order total.
+3. Calculate a PKR 6,000 remaining balance.
+4. Add the unpaid amount to the customer's outstanding balance.
+5. Allow additional payments to be recorded later.
+
+---
+
+## AC-V1-006 — Multiple Payments
+
+Given a customer has an outstanding order balance,
+
+an authorized user must be able to record multiple later payments until the remaining balance reaches zero.
+
+Every payment must remain visible as a separate historical transaction.
+
+---
+
+## AC-V1-007 — Customer Credit Overview
+
+An administrator must be able to select a customer and determine:
+
+* Total outstanding balance.
+* Relevant unpaid orders.
+* Payment history.
+* Purchase history.
+
+---
+
+## AC-V1-008 — Reservation
+
+Given an available product,
+
+an authorized user must be able to reserve it for a customer.
+
+The system must:
+
+1. Record the reservation.
+2. Apply the default 48-hour period.
+3. Prevent an ordinary conflicting sale.
+4. Notify authorized users when the reservation expires.
+5. Keep the reservation active until manually released, extended, cancelled, or overridden.
+
+---
+
+## AC-V1-009 — Return
+
+Given an eligible sale less than or equal to seven days old,
+
+an authorized user must be able to process an approved return provided the product is in original condition.
+
+The original sale must remain historically visible.
+
+The product may only return to available inventory when it remains suitable for resale.
+
+---
+
+## AC-V1-010 — Exchange
+
+Given a customer exchanges one product for another,
+
+the system must:
+
+1. Record the returned product.
+2. Record the replacement product.
+3. Calculate the financial difference.
+4. Record additional customer payment where required.
+5. Record money owed to the customer where applicable.
+6. Correctly update both inventory records.
+7. Preserve the exchange history.
+
+---
+
+## AC-V1-011 — Delivery
+
+Given a confirmed order requiring delivery,
+
+an authorized user must be able to:
+
+1. Create delivery information.
+2. Assign an internal tracking/reference number.
+3. Record the delivery address.
+4. Record the delivery charge.
+5. Update delivery status through the defined delivery workflow.
+
+---
+
+## AC-V1-012 — Receipt
+
+A completed sale must allow an authorized user to generate a receipt containing:
+
+* Unique receipt or invoice number.
+* Business name.
+* Products.
+* Selling prices.
+* Discounts.
+* Total.
+* Amount paid.
+* Outstanding balance where applicable.
+
+The receipt must be printable and capable of PDF generation.
+
+---
+
+## AC-V1-013 — Reporting
+
+Using recorded business data, an administrator must be able to determine at minimum:
+
+* Sales revenue.
+* Gross profit.
+* Net profit.
+* Inventory value.
+* Number of items sold.
+* Customer outstanding credit.
+* Sales by month.
+* Sales by brand.
+* Sales by category.
+* Inventory older than 30 days.
+* Inventory older than 90 days.
+
+---
+
+## AC-V1-014 — Permissions
+
+An employee account must not automatically receive the same privileged access as an administrator.
+
+Restricted functions must reject unauthorized access even if the user attempts to access them directly rather than through the user interface.
+
+---
+
+## AC-V1-015 — Data Persistence
+
+After a user logs out or closes the application, previously committed products, customers, orders, payments, and inventory records must remain available when the system is accessed again.
+
+---
+
+## AC-V1-016 — End-to-End Business Scenario
+
+Before Version 1 is considered production-ready, the business owner shall successfully complete an end-to-end test representing a real transaction:
+
+Purchase a product
+→ receive it
+→ add it to available inventory
+→ create or select a customer
+→ sell the product
+→ record a partial payment
+→ create an outstanding balance
+→ record delivery
+→ generate a receipt
+→ later record the remaining payment
+→ verify inventory, customer balance, revenue, and profit information.
+
+Successful completion of this scenario is mandatory for Version 1 acceptance.
+
+---
+
+# 16. Requirements Change Control
+
+After the SRS has been baselined, new requirements shall not be silently inserted into the project.
+
+A proposed requirement change shall identify:
+
+1. The requested change.
+2. The business reason.
+3. Existing requirements affected.
+4. Expected impact on scope.
+5. Expected impact on implementation.
+6. Expected impact on testing.
+7. Release in which the change should be considered.
+
+Minor wording corrections that do not alter system behavior do not require formal change approval.
+
+Significant scope or business-rule changes shall be reviewed before implementation.
