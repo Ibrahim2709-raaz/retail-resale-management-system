@@ -5,7 +5,7 @@
 **Project Name:** Retail Resale Management System
 **Working Repository Name:** `retail-resale-management-system`
 **Project Type:** Full-Stack Business Management and E-Commerce System
-**Project Status:** Discovery / Requirements Engineering
+**Project Status:** Technical Design
 **Primary Developer:** Ibrahim Salman
 **Primary Client:** Clothing resale business owner
 **Primary Business Domain:** Retail clothing resale
@@ -204,7 +204,7 @@ These include:
 * Notifications.
 * Customer-facing product discovery and ordering.
 
-The final system boundaries and functionality will be formally defined during requirements engineering.
+The system boundaries and core functionality have now been defined and validated through requirements engineering and system modeling. The project is now progressing into technical design.
 
 ---
 
@@ -227,10 +227,28 @@ A successful system should improve:
 
 ## 11. Current Project Phase
 
+The project has completed:
+
+- Project initialization.
+- Requirements discovery.
+- Requirements engineering.
+- Requirements validation.
+- System context modeling.
+- Use case modeling.
+- Detailed use case specifications.
+- Conceptual domain modeling.
+- Process and activity modeling.
+
 The project is currently in:
 
-**Requirements Discovery and Requirements Engineering**
+**Stage 3 — Technical Design**
 
-No final database architecture, software architecture, user-interface design, or technology implementation decisions are considered final at this stage.
+The current technical design activity is:
 
-These decisions will follow completion and validation of the system requirements.
+**Stage 3.1 — Logical Data Model / Entity Relationship Diagram (ERD)**
+
+The purpose of this stage is to translate the validated requirements and conceptual domain model into an implementable logical data structure.
+
+Database implementation, backend development, frontend development, and deployment have not yet begun.
+
+Technical decisions made during this phase must remain consistent with the validated Software Requirements Specification, business rules, use case specifications, domain model, and process models.
