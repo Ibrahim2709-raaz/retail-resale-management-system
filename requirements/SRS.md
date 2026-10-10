@@ -3,8 +3,8 @@
 ## Retail Resale Management System
 
 **Document ID:** RRMS-SRS-001
-**Version:** 0.5
-**Status:** Draft
+**Version:** 1.0
+**Status:** Baseline
 **Project Phase:** Requirements Engineering
 **Author:** Ibrahim Salman
 **Primary Stakeholder:** Business Owner
@@ -16,7 +16,7 @@
 
 | Version | Date        | Author         | Description                                                 | Status |
 | ------- | ----------- | -------------- | ----------------------------------------------------------- | ------ |
-| 0.5     | August 2026 | Ibrahim Salman | Defined release scope, exclusions, constraints, dependencies and Version 1 acceptance criteria      | Draft  |
+| 1.0     | August 2026 | Ibrahim Salman | Requirements validated with primary stakeholder and approved as initial system baseline      | Baseline  |
 
 ---
 
