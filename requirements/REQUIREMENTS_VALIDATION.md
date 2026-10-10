@@ -1,9 +1,9 @@
 # Retail Resale Management System — Requirements Validation
 
 **Document ID:** RRMS-RV-001
-**Version:** 0.1
-**Status:** In Review
-**Related Document:** RRMS-SRS-001 v0.5
+**Version:** 1.0
+**Status:** Approved
+**Related Document:** RRMS-SRS-001 v1.0
 **Validation Stage:** Requirements Baseline Review
 
 ---
@@ -397,7 +397,7 @@ Once all mandatory validation items and open decisions have been resolved:
 
 **SRS Version Reviewed:** __________________
 
-**Review Outcome:** __________________
+**Review Outcome:** Approved
 
 **Primary Stakeholder:** __________________
 
@@ -411,7 +411,7 @@ The stakeholder confirms that the reviewed Software Requirements Specification r
 
 The stakeholder understands that future changes may be processed through requirements change control.
 
-**Stakeholder Approval:** Yes / No
+**Stakeholder Approval:** Yes
 
 ---
 
