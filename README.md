@@ -31,6 +31,7 @@ A full-stack retail management platform being developed for a real clothing resa
 - Authentication and user management
 
 Implementation is now beginning.
+
 ## Problem
 
 The business currently manages purchasing, inventory, customers, credit sales, payments, deliveries, expenses, and sales records through a combination of spreadsheets, handwritten records, and WhatsApp.
