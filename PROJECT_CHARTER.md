@@ -204,7 +204,7 @@ These include:
 * Notifications.
 * Customer-facing product discovery and ordering.
 
-The system boundaries and core functionality have now been defined and validated through requirements engineering and system modeling. The project is now progressing into technical design.
+The system boundaries, core functionality, data architecture, software architecture, API structure, frontend architecture, security model, and implementation technology stack have been defined through the completed requirements, system modeling, and technical design phases. The project is now progressing into implementation.
 
 ---
 
