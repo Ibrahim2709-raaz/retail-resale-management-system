@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:18
+    container_name: rrms-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: rrms
+      POSTGRES_USER: rrms_user
+      POSTGRES_PASSWORD: rrms_password
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - rrms_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rrms_user -d rrms"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  rrms_postgres_data:
