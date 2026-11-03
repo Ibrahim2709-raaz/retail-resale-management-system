@@ -3,7 +3,6 @@ from sqlalchemy import text
 
 from app.db.session import engine
 
-
 app = FastAPI(
     title="Retail Resale Management System API",
     version="0.1.0",
