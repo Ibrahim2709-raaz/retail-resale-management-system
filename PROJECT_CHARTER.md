@@ -241,6 +241,7 @@ The project has completed:
 - Frontend and UI architecture design.
 - Security and authorization design.
 - Technology stack and implementation planning.
+- Project foundation.
 
 The project is currently in:
 
@@ -248,8 +249,10 @@ The project is currently in:
 
 The current implementation activity is:
 
-**Stage 4.1 — Project Foundation**
+**Stage 4.2 — Authentication & Users**
 
-The objective of this stage is to establish the executable project structure, development environment, frontend and backend applications, PostgreSQL connectivity, migrations, test tooling, and baseline continuous integration.
+Stage 4.1 — Project Foundation has been completed. The project now has an executable FastAPI backend, React and TypeScript frontend, PostgreSQL development database, Docker Compose environment, SQLAlchemy connectivity, Alembic migrations, automated testing and linting, and GitHub Actions continuous integration.
+
+The current implementation activity is Stage 4.2 — Authentication & Users. This stage will establish the user data model, secure password handling, session-based authentication, administrator and employee roles, authorization enforcement, and authentication-related tests.
 
 All implementation work must remain consistent with the validated requirements and approved Technical Design documentation.

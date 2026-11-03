@@ -1,10 +1,10 @@
 # Retail Resale Management System
 
 A full-stack retail management platform being developed for a real clothing resale business.
-
 ## Project Status
 
-**Current Phase:** Implementation
+**Current Phase:** Implementation  
+**Current Step:** Stage 4.2 — Authentication & Users
 
 ### Completed
 
@@ -12,26 +12,29 @@ A full-stack retail management platform being developed for a real clothing resa
 - Requirements engineering
 - System modeling
 - Technical design
+- Stage 4.1 — Project Foundation
 
-### Technical Design Completed
+### Implementation Foundation Completed
 
-- Logical data model and ERD
-- Physical database design
-- System architecture
-- Backend and API design
-- Frontend and UI architecture
-- Security and authorization design
-- Technology stack and implementation plan
+- FastAPI backend scaffold
+- React + TypeScript + Vite frontend scaffold
+- PostgreSQL development database
+- Docker Compose setup
+- SQLAlchemy database connectivity
+- Alembic migration framework
+- Environment configuration
+- Backend linting and tests
+- Frontend linting and production build checks
+- GitHub Actions CI
 
 ### Next
 
-- Project foundation
-- Backend and frontend scaffolding
-- PostgreSQL integration
-- Authentication and user management
-
-Implementation is now beginning.
-
+- Authentication foundation
+- User model and migration
+- Password hashing
+- Session-based authentication
+- Administrator and employee authorization
+- Authentication tests
 ## Problem
 
 The business currently manages purchasing, inventory, customers, credit sales, payments, deliveries, expenses, and sales records through a combination of spreadsheets, handwritten records, and WhatsApp.
